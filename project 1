@@ -1,0 +1,34 @@
+import random
+
+def start_game():
+
+    # write your code inside this function  
+print("Hello and welcome to the game where you guess a number #1-10:")
+picked_number = int(input("Pick a number #1-10: "))
+player_scores = []
+solution = random.randrange(1, 10)
+
+number_count = 0
+while picked_number != solution:
+  number_count += 1
+  if picked_number < 1:
+      picked_number = int(input("You attempted to enter a number lower than 10, this is wrong, keep trying!:"))
+      continue    
+  elif picked_number > 10:
+      picked_number = int(input("You attempted to enter a number higher than 10, this is wrong, keep trying!:"))
+      continue   
+  elif picked_number < solution:
+       picked_number = int(input("It's Higher:   "))                              
+  elif picked_number > solution:
+       picked_number = int(input("It's Lower:    "))
+
+if picked_number == solution:
+    number_count += 1
+    player_scores.append(number_count)
+    print("Congratulations, #{} is correct! It took you {} tries, but you have finished the game.".format(picked_number, number_count))
+    go_again = input("Do you want to play the game again? (Y/N) ")
+    
+    if go_again == 'Y':
+      start_game()
+    else:
+      print("Goodbye!")
