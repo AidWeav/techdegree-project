@@ -8,7 +8,7 @@ def start_game():
         picked_number = int(input("Pick a number #1-10: "))
     except ValueError:
         print("Please enter a numerical value:   ")
-    
+    # Trying to fix this last problem still WIP
     solution = random.randrange(1, 10)
     
     number_count = 0
