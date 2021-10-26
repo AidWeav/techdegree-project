@@ -4,11 +4,14 @@ player_scores = []
 
 def start_game():
     print("Hello and welcome to the game where you guess a number #1-10:")
-    try:
-        picked_number = int(input("Pick a number #1-10: "))
-    except ValueError:
-        print("Please enter a numerical value:   ")
-    # Trying to fix this last problem still WIP
+    picked_number = 0
+    
+    while picked_number == 0:
+        try:
+            picked_number = int(input("Pick a number #1-10: "))
+        except ValueError:
+            print("Please enter a numerical value:   ")
+    
     solution = random.randrange(1, 10)
     
     number_count = 0
